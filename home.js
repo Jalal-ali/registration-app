@@ -5,7 +5,7 @@ const btn = document.querySelector("#btn");
 // btn.innerHTML = yuu ;
 btn.addEventListener("click" , ()=>{
     signOut(auth).then(() => {
-      window.location = "./login.html";
+      window.location = "index.html";
     }).catch((error) => {
       // An error happened.
       alert("err");
