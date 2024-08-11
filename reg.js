@@ -12,27 +12,29 @@ const googlebtn = document.querySelector("#ggl-btn");
 const btn = document.querySelector("#btn");
  btn.addEventListener('clicK' , ()=>{
   btn.innerHTML = "Loading" ;
+  console.log(email.value);
  })
  
  //register via form 
  form.addEventListener( 'submit' ,  (event)=>{
    event.preventDefault(); 
    createUserWithEmailAndPassword(auth, email.value, password.value)
-   .then((userCredential) => {
-     btn.innerHTML = "SUCCESS" ;
-     const user = userCredential.user;
-     console.log(email.value + ' ' + password.value);
-     window.location = "index.html" ;
-    })
-    .catch((error) => {
-      const errorCode = error.code;
+  .then((userCredential) => {
+    // Signed up 
+    window.location = "index.html";
+    const user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
     const errorMessage = error.message;
+    // ..
   });
 })
 
 //register with google
 
-auth.languageCode = 'en';
+// auth.languageCode = 'en';
 const provider = new GoogleAuthProvider();
 
 googlebtn.addEventListener('click' , ()=>{
