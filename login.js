@@ -29,7 +29,7 @@ signInWithEmailAndPassword(auth, email.value, password.value)
   })
   .catch((error) => {
     const errorCode = error.code;
-    alert("error");
+    alert("Invalid! Try Again. :(");
     const errorMessage = error.message;
   });
 })
