@@ -29,6 +29,7 @@ signInWithEmailAndPassword(auth, email.value, password.value)
   })
   .catch((error) => {
     const errorCode = error.code;
+    alert("error");
     const errorMessage = error.message;
   });
 })
